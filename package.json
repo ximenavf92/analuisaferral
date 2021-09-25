@@ -1,0 +1,26 @@
+{
+  "name": "ana-luisa-ferral",
+  "version": "1.0.2",
+  "description": "Ana Luisa Ferral's website based on Phil Haweskworh's simple-sassy-scaffold, a basic scaffold for an 11ty site with Sass pipeline",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ximenavf92/analuisaferral"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "dev": "ntl dev",
+    "dmc": "ntl dev"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "scaffold",
+    "ssg"
+  ],
+  "author": "Ximena Vila Ferral <hola@ximenavf.com>",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "sass": "^1.29.0"
+  }
+}
