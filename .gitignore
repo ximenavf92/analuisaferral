@@ -8,6 +8,7 @@ package-lock.json
 
 # Build Folder
 site/
+prod/
 
 # Local Netlify folder
 .netlify

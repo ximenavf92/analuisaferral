@@ -5,7 +5,7 @@ const fs = require("fs-extra");
 module.exports = (eleventyConfig) => {
 
   // pass files direclty through to the output
-  eleventyConfig.addPassthroughCopy("site/images");
+  eleventyConfig.addPassthroughCopy("site/assets");
 
   // watch the scss source files in case of need to regenerate
   eleventyConfig.addWatchTarget("src/scss/");
@@ -17,8 +17,8 @@ module.exports = (eleventyConfig) => {
       sourceMap: false,
       outputStyle: "compressed",
     });
-    fs.ensureDirSync('dist/css/');
-    fs.writeFile("dist/css/main.css", result.css, (err) => {
+    fs.ensureDirSync('prod/css/');
+    fs.writeFile("prod/css/main.css", result.css, (err) => {
       if (err) throw err;
       console.log("CSS generated");
     });
@@ -28,7 +28,7 @@ module.exports = (eleventyConfig) => {
   return {
     dir: {
       input: "src/site",
-      output: "dist"
+      output: "prod"
     }
   };
 
