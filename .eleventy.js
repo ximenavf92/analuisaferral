@@ -5,15 +5,15 @@ const fs = require("fs-extra");
 module.exports = (eleventyConfig) => {
 
   // pass files direclty through to the output
-  eleventyConfig.addPassthroughCopy("site/assets");
+  eleventyConfig.addPassthroughCopy("./src/site/assets");
 
   // watch the scss source files in case of need to regenerate
-  eleventyConfig.addWatchTarget("src/scss/");
+  eleventyConfig.addWatchTarget("./src/scss/");
 
   // Compile Sass before a build
   eleventyConfig.on("beforeBuild", () => {
     let result = sass.renderSync({
-      file: "src/scss/main.scss",
+      file: "./src/scss/main.scss",
       sourceMap: false,
       outputStyle: "compressed",
     });
@@ -28,6 +28,8 @@ module.exports = (eleventyConfig) => {
   return {
     dir: {
       input: "src/site",
+      includes: "_includes",
+      data: "_data",
       output: "prod"
     }
   };
