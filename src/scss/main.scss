@@ -42,6 +42,8 @@ html::-webkit-scrollbar-track {
 }
 
 body {
+  width: 100%;
+  overflow-x: hidden;
   color: $primary-text-color;
   font-family: $bodyFont;
   font-weight: normal;
@@ -49,14 +51,14 @@ body {
   font-size: 16px;
   background-color: $primary-page-color;
   // padding: 2rem;
-  border-top: 3px solid $secondary-text-color;
+  // border-top: 3px solid $secondary-text-color;
 
   @include bp(mid) {
-    border-top-color: $accent-color;
+    // border-top-color: $accent-color;
     font-size: 16px;
   }
   @include bp(wide) {
-    border-top-color: $accent-color-alternate;
+    // border-top-color: $accent-color-alternate;
     font-size: 18px;
   }
 }
@@ -97,16 +99,29 @@ a {
   background-color: $accent-color;
   padding: .75rem 1.25rem;
   border-radius: .25rem;
+  border: solid 2px transparent;
+
+  svg {
+    fill: $primary-page-color;
+    position: relative;
+      top: .25rem;
+    margin-right: .5rem;
+  }
   
   &:visited {
     color: $primary-page-color;
   }
 
-  .button-icon--insta {
-    &::before {
-      content: 'jasfkl';
+  &:hover {
+    background-color: $primary-page-color;
+    color: $accent-color;
+    border-color: $accent-color;
+
+    svg {
+      fill: $accent-color;
     }
-}
+  }
+
 }
 
 footer {
@@ -156,26 +171,39 @@ footer {
   @include bp(wide) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-  
-  .banner-img {
-      width: 100%;
-      min-height: 20%;
-      object-fit: cover;
-
-      @include bp(mid) {
-        height: 40%;
-      }
-      
-      @include bp(wide) {
-        height: 100%;
-      }
+    place-items: center;
   }
 }
+
+.splash-layout-grid .banner-section {
+  height: auto;
+
+  // @include bp(wide) {
+  //   grid-column: 2 / 3;
+  // }
+   
+  .banner-img {
+    width: 100%;
+    min-height: 20%;
+    object-fit: cover;
+
+    @include bp(mid) {
+      height: 40%;
+    }
+    
+    @include bp(wide) {
+      height: 100%;
+    }
+}
+} 
 
 .splash-layout-grid .content-section {
   padding: 5% 10%;
   height: auto;
+
+  // @include bp(wide) {
+  //   grid-column: 1 / 2;
+  // }
 
   .logo-tagline-section {
     text-align: center;
@@ -190,6 +218,7 @@ footer {
     @include bp(wide) {
       text-align: left;
     }
+    
   }
 
   .tagline {
@@ -199,7 +228,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     place-content: center;
-    gap: .5rem 1rem;
+    gap: 0 1rem;
     margin-left: 0;
     padding-left: 0;
     font-family: $headingFont;
@@ -209,7 +238,7 @@ footer {
     color: $accent-color;
     font-size: 1.25em;
 
-    margin: 3rem 0;
+    margin: 3rem 0 2rem;
 
     @include bp(wide) {
       text-align: left;
