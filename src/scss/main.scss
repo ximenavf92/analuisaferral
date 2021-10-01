@@ -42,8 +42,6 @@ html::-webkit-scrollbar-track {
 }
 
 body {
-  width: 100%;
-  overflow-x: hidden;
   color: $primary-text-color;
   font-family: $bodyFont;
   font-weight: normal;
@@ -126,7 +124,7 @@ a {
 
 footer {
   text-align: center;
-  margin: 8rem 0 0;
+  margin: 3rem 0 0;
   
   .footer-border {
     border-top: solid 2px hsl(0, 0%, 20%);
@@ -137,7 +135,7 @@ footer {
     width: 100%;
     // padding: 0 6rem;
     margin: 0 auto;
-    font-size: 12px;
+    font-size: 11px;
   }
 }
 
@@ -166,12 +164,12 @@ footer {
 .splash-layout-grid {
   padding: 0;
   width: 100%;
-  height: 100%;
 
   @include bp(wide) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+    height: 100%;
   }
 }
 
@@ -184,11 +182,15 @@ footer {
    
   .banner-img {
     width: 100%;
-    min-height: 20%;
     object-fit: cover;
+    object-position: 0 30%;
+
+    @include bp(narrow-max) {
+      height: 55%;
+    }
 
     @include bp(mid) {
-      height: 40%;
+      height: 30%;
     }
     
     @include bp(wide) {
@@ -198,20 +200,23 @@ footer {
 } 
 
 .splash-layout-grid .content-section {
-  padding: 5% 10%;
+  padding: 5% 6%;
   height: auto;
 
-  // @include bp(wide) {
-  //   grid-column: 1 / 2;
-  // }
+  @include bp(mid) {
+    padding: 5% 10%;
+  }
 
   .logo-tagline-section {
     text-align: center;
     margin: 0 auto;
 
-    @include bp(narrow-max) {
       img {
-        width: 90%;
+        width: 80%;
+        margin-top: 1rem;
+
+        @include bp(wide) {
+          width: 50%;
       }
     }
 
@@ -236,15 +241,17 @@ footer {
     letter-spacing: .25em;
     font-weight: regular;
     color: $accent-color;
-    font-size: 1.25em;
+    font-size: 1.25rem;
+    line-height: 1.5;
 
-    margin: 3rem 0 2rem;
+    margin: 2rem 0 2rem;
 
     @include bp(wide) {
       text-align: left;
       justify-content: start;
       margin: 3rem 0 0;
       padding: 4rem 0 0;
+      font-size: 1.25em;
     }
 
     li {
@@ -268,5 +275,14 @@ footer {
   .bio {
     line-height: 1.9;
     margin-bottom: 2rem;
+  }
+
+  .coming-soon {
+    margin: 2rem auto 0;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: .035em;
+    background-color: hsl(0, 0%, 15%);
+    padding: 1rem;
   }
 }
