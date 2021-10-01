@@ -3,6 +3,9 @@
   @if $point == narrow {
     @media #{$bp-narrow} { @content; }
   }
+  @else if $point == narrow-max {
+    @media #{$bp-narrow-max} { @content; }
+  }
   @else if $point == mid {
     @media #{$bp-mid} { @content; }
   }

@@ -1,12 +1,17 @@
 // Breakpoints
 $bp-narrow: "(min-width: 500px)";
-$bp-mid: "(min-width: 800px)";
-$bp-wide: "(min-width: 1266px)";
+$bp-narrow-max: "(max-width: 500px)";
+$bp-mid: "(min-width: 720px)";
+$bp-wide: "(min-width: 1200px)";
 
-// Colours
+// Colors
 
-$primary-text-color: #222;
+$primary-text-color: #FBFBFB;
 $secondary-text-color: #555555;
-$primary-page-color: #e3e6e6;
-$accent-color: #d7176a;
-$accent-color-alternate: #00d9ff;
+$primary-page-color: #1F1F1F;
+$accent-color: #83CD00;
+$accent-color-alternate: #83CD00;
+
+// Fonts
+$headingFont: 'p22-mackinac-pro', serif;
+$bodyFont: 'poppins', sans-serif;
